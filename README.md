@@ -1,3 +1,17 @@
 # Number-and-Business-Validator
-Number validator and business search up 
-Test by jason c
+
+## Description
+
+## Deployment 
+
+## Usage
+
+## Credits
+
+N/A
+
+## Contact Me
+
+## License
+
+MIT License
