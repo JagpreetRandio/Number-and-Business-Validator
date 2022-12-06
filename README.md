@@ -1,6 +1,5 @@
 # Number-and-Business-Validator
 Number validator and business search up 
-# Work-Day-Schedule
 
 ## Description
 
@@ -14,7 +13,6 @@ Number validator and business search up
 
 ## Credits
 
-N/A
 
 ## Contact
 
