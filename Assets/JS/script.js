@@ -47,4 +47,5 @@ function validateForm(event) {
       alert("validation success")
   }
   event.preventDefault();
+  
 }
