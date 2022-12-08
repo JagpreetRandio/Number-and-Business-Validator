@@ -28,34 +28,30 @@
         </div>
     </header>
     <!-- Search Section -->
-    <div class="container-fluid text-center py-4 custom">
+    <div class="col-md-6 text-center offset-md-3">
         <div class="card">
           <h3 class="card-header text-uppercase">Search By Phone Number</h3>
 
           <div class="p-4">
             <form id="myform">
              <div>
-             <label for="myform_phone">Phone:</label>
-             <input type="text" id="myform_phone" name="phone" />
+             <label for="myform_phone">Phone Number:</label>
+             <input type="text" id="myform_phone" name="phone" placeholder="+1(555)-555-0199"/>
                <div id="phone_error" class="error hidden">Please enter a valid phone number</div>
              </div>
-             <div class="mt-2">
-               <button type="submit">Submit</button>
+             <div class="mt-4">
+               <button class="btn btn-custom" type="submit">Search</button>
              </div>
              </form>
            </div>
 
-          <form id="number-form" class="card-body">
-            <label class="form-label" for="phonenumber">Phone Number</label>
-            <input name="number" id="number" type="text" autofocus="true" class="number-input" placeholder="+1(555)-555-0199"/>
-            <button type="submit" class="btn">Search</button>
-          </form>
-
         </div>
     <!-- Results Section -->
-    <div class="container-fluid text-center py-2 custom">
+    <div class="col-md-6 text-center offset-md-3">
+      <div class="results">
         <div class = "row border" id = "number-search">
             <div class = "d-flex" id = "result-container"></div>
+       </div>
     </div>  
 
 
