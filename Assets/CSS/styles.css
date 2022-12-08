@@ -1,3 +1,9 @@
+*{
+  font-family: 'Cormorant', serif;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 300;
+  
+}
 .error
 {
   color: red;
@@ -7,3 +13,47 @@
 {
   display:none;
 }
+
+body {
+  background: url('https://i.pinimg.com/originals/e5/22/90/e5229025ad4a59639f618ae34ed7e697.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.title{
+  margin: 20px;
+  color: azure;
+
+}
+.description{
+  color: azure;
+}
+.card{
+  background-color: black;
+  opacity: .8;
+  color: azure;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.results{
+  background-color: black;
+  opacity: .8;
+  color: azure;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.btn-custom{
+  background-color: gray;
+  color: azure;
+  font-size: 18px;
+
+}
+.btn-custom:hover {
+  background-color: hsl(0, 93%, 48%);
+  color: azure;
+}
+  
+
