@@ -40,7 +40,7 @@
                <div id="phone_error" class="error hidden">Please enter a valid phone number</div>
              </div>
              <div class="mt-4">
-               <button class="btn btn-custom" type="submit">Search</button>
+               <button class="btn btn-custom" type="submit" id="searchButton">Search</button>
              </div>
              </form>
            </div>
@@ -50,7 +50,12 @@
     <div class="col-md-6 text-center offset-md-3">
       <div class="results">
         <div class = "row border" id = "number-search">
+          <h3>Results</h3>
+          <ul id="results">
+            <!-- results of validation will show up here -->
+          </ul>
             <div class = "d-flex" id = "result-container"></div>
+           
        </div>
     </div>  
 
