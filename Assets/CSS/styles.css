@@ -55,5 +55,9 @@ body {
   background-color: hsl(0, 93%, 48%);
   color: azure;
 }
+
+.result-container {
+  display: block;
+}
   
 
