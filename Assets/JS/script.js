@@ -121,12 +121,12 @@ function validatePhoneNumber(input_str) {
     const phone = document.createElement("p");
     const type = document.createElement("p");
   
-    const node1 = document.createTextNode(data.valid);
-    const node2 = document.createTextNode(data.country);
-    const node3 = document.createTextNode(data.location);
-    const node4 = document.createTextNode(data.carrier);
+    const node1 = document.createTextNode('Valid: ' + data.valid);
+    const node2 = document.createTextNode('Country: ' + data.country.name);
+    const node3 = document.createTextNode('Location: ' + data.location);
+    const node4 = document.createTextNode('Carrier: ' + data.carrier);
     const node5 = document.createTextNode(data.phone);
-    const node6 = document.createTextNode(data.type);
+    const node6 = document.createTextNode('Type: ' + data.type);
   
     valid.appendChild(node1);
     country.appendChild(node2);
