@@ -109,7 +109,41 @@ $.getJSON("https://phonevalidation.abstractapi.com/v1/?api_key=0879c0a3573c4b639
 
     console.log("display content")
     console.log(data);
+    showResult(data);
 })
+
+var showResult = function(data) {
+
+    const valid = document.createElement("p");
+    const country = document.createElement("p");
+    const location = document.createElement("p");
+    const carrier = document.createElement("p");
+    const phone = document.createElement("p");
+    const type = document.createElement("p");
+  
+    const node1 = document.createTextNode(data.valid);
+    const node2 = document.createTextNode(data.country);
+    const node3 = document.createTextNode(data.location);
+    const node4 = document.createTextNode(data.carrier);
+    const node5 = document.createTextNode(data.phone);
+    const node6 = document.createTextNode(data.type);
+  
+    valid.appendChild(node1);
+    country.appendChild(node2);
+    location.appendChild(node3);
+    carrier.appendChild(node4);
+    phone.appendChild(node5);
+    type.appendChild(node6);
+  
+    const resultEl = document.getElementById("result-container");
+  
+    resultEl.appendChild(valid);
+    resultEl.appendChild(country);
+    resultEl.appendChild(location);
+    resultEl.appendChild(carrier);
+    resultEl.appendChild(type);
+  
+  }  
 
 
 var getPhoneNumber = function(phoneNumber){
