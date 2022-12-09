@@ -156,4 +156,4 @@ function getNumberData(){
   .then(function(data){
       createResults(data);
   })
-}
+}}
