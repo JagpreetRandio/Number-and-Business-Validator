@@ -104,8 +104,8 @@ function validatePhoneNumber(input_str) {
     }
     event.preventDefault();
   }
-  
-  $.getJSON("https://phonevalidation.abstractapi.com/v1/?api_key=0879c0a3573c4b6399e5f11245ecee00&phone=14152007986", function(data) {
+
+  $.getJSON(`https://phonevalidation.abstractapi.com/v1/?api_key=0879c0a3573c4b6399e5f11245ecee00&phone=${phone}`, function(data) {
   
       console.log("display content")
       console.log(data);
