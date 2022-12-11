@@ -29,7 +29,8 @@ body {
 .description{
   color: azure;
 }
-.card{
+.card,
+.result-container{
   background-color: black;
   opacity: .8;
   color: azure;
@@ -55,9 +56,4 @@ body {
   background-color: hsl(0, 93%, 48%);
   color: azure;
 }
-
-.result-container {
-  display: block;
-}
-  
 
