@@ -161,7 +161,8 @@ const settings = {
 
 $.ajax(settings).done(function (response) {
   console.log(response);
-  showBusinessResult(data);
+  console.log(data)
+  showBusinessResult(businesses);
 });
 
 var showBusinessResult = function(data) {
@@ -172,11 +173,11 @@ var showBusinessResult = function(data) {
     const displayAddress = document.createElement("p");
     const rating = document.createElement("p");
   
-    const node7 = document.createTextNode('Name: ' + data.name);
-    const node8 = document.createTextNode(data.image_url);
-    const node9 = document.createTextNode('Url: ' + data.url);
-    const node10 = document.createTextNode('Address: ' + data.display_address);
-    const node11 = document.createTextNode('Rating: ' + data.rating);
+    const node7 = document.createTextNode('Name: ' + data.businesses.name);
+    const node8 = document.createTextNode(data.businesses.image_url);
+    const node9 = document.createTextNode('Url: ' + data.businesses.url);
+    const node10 = document.createTextNode('Address: ' + data.businesses.location.display_address);
+    const node11 = document.createTextNode('Rating: ' + data.businesses.rating);
 
     name.appendChild(node7);
     imageUrl.appendChild(node8);
