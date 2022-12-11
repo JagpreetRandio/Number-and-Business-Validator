@@ -18,10 +18,10 @@ var supportedAreaCodes = [
 ];
 
 
-const options = {
-    method: 'GET',
-    headers: {accept: 'application/json', Authorization: '2067826593'}
-  };
+// const options = {
+//     method: 'GET',
+//     headers: {accept: 'application/json', Authorization: '2067826593'}
+//   };
 
 // var APIKey = "42d8743ba62a4bad80b362d999437d44";
 
@@ -145,4 +145,54 @@ function validatePhoneNumber(input_str) {
   
   }
   
-}  
+ 
+// ADDED THE BUSINESS LOOKUP API 
+
+const settings = {
+  async: true,
+  crossDomain: true,
+  url: `https://api.yelp.com/v3/businesses/search/phone?phone=${phone}`,
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer fzLlTXCEtAlfCdWydnbbZPvAobg7iZu9pGznSTrYIqaA26tPWchnGr-dp6mw0m6xk_z63JO-UWSAN397azmzXybDUYILszG3IvafgDIQWfTAtJuR9996B4dIJCWVY3Yx'
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  console.log(data)
+  showBusinessResult(businesses);
+});
+
+var showBusinessResult = function(data) {
+
+    const name = document.createElement("p");
+    const imageUrl = document.createElement("p");
+    const url = document.createElement("p");
+    const displayAddress = document.createElement("p");
+    const rating = document.createElement("p");
+  
+    const node7 = document.createTextNode('Name: ' + data.businesses.name);
+    const node8 = document.createTextNode(data.businesses.image_url);
+    const node9 = document.createTextNode('Url: ' + data.businesses.url);
+    const node10 = document.createTextNode('Address: ' + data.businesses.location.display_address);
+    const node11 = document.createTextNode('Rating: ' + data.businesses.rating);
+
+    name.appendChild(node7);
+    imageUrl.appendChild(node8);
+    url.appendChild(node9);
+    displayAddress.appendChild(node10);
+    rating.appendChild(node11);
+    
+    const resultEl = document.getElementById("result-container");
+
+    resultEl.appendChild(name);
+    resultEl.appendChild(imageUrl);
+    resultEl.appendChild(url);
+    resultEl.appendChild(displayAddress);
+    resultEl.appendChild(rating);
+    
+    
+}
+} 
