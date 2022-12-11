@@ -18,10 +18,10 @@ var supportedAreaCodes = [
 ];
 
 
-const options = {
-    method: 'GET',
-    headers: {accept: 'application/json', Authorization: '2067826593'}
-  };
+// const options = {
+//     method: 'GET',
+//     headers: {accept: 'application/json', Authorization: '2067826593'}
+//   };
 
 // var APIKey = "42d8743ba62a4bad80b362d999437d44";
 
@@ -145,17 +145,53 @@ function validatePhoneNumber(input_str) {
   
   }
   
-}  
+ 
 // ADDED THE BUSINESS LOOKUP API 
-const businessLookUp = {
+
+const settings = {
+  async: true,
+  crossDomain: true,
+  url: `https://api.yelp.com/v3/businesses/search/phone?phone=${phone}`,
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'fzLlTXCEtAlfCdWydnbbZPvAobg7iZu9pGznSTrYIqaA26tPWchnGr-dp6mw0m6xk_z63JO-UWSAN397azmzXybDUYILszG3IvafgDIQWfTAtJuR9996B4dIJCWVY3Yx'
+    Authorization: 'Bearer fzLlTXCEtAlfCdWydnbbZPvAobg7iZu9pGznSTrYIqaA26tPWchnGr-dp6mw0m6xk_z63JO-UWSAN397azmzXybDUYILszG3IvafgDIQWfTAtJuR9996B4dIJCWVY3Yx'
   }
 };
 
-fetch('https://api.yelp.com/v3/businesses/search/phone?phone=%252B14159083801', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  showBusinessResult(data);
+});
+
+var showBusinessResult = function(data) {
+
+    const name = document.createElement("p");
+    const imageUrl = document.createElement("p");
+    const url = document.createElement("p");
+    const displayAddress = document.createElement("p");
+    const rating = document.createElement("p");
+  
+    const node7 = document.createTextNode('Name: ' + data.name);
+    const node8 = document.createTextNode(data.image_url);
+    const node9 = document.createTextNode('Url: ' + data.url);
+    const node10 = document.createTextNode('Address: ' + data.display_address);
+    const node11 = document.createTextNode('Rating: ' + data.rating);
+
+    name.appendChild(node7);
+    imageUrl.appendChild(node8);
+    url.appendChild(node9);
+    displayAddress.appendChild(node10);
+    rating.appendChild(node11);
+    
+    const resultEl = document.getElementById("result-container");
+
+    resultEl.appendChild(name);
+    resultEl.appendChild(imageUrl);
+    resultEl.appendChild(url);
+    resultEl.appendChild(displayAddress);
+    resultEl.appendChild(rating);
+    
+    
+}
+} 
