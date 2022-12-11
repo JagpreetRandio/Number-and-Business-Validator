@@ -146,3 +146,16 @@ function validatePhoneNumber(input_str) {
   }
   
 }  
+// ADDED THE BUSINESS LOOKUP API 
+const businessLookUp = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'fzLlTXCEtAlfCdWydnbbZPvAobg7iZu9pGznSTrYIqaA26tPWchnGr-dp6mw0m6xk_z63JO-UWSAN397azmzXybDUYILszG3IvafgDIQWfTAtJuR9996B4dIJCWVY3Yx'
+  }
+};
+
+fetch('https://api.yelp.com/v3/businesses/search/phone?phone=%252B14159083801', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
