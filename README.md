@@ -21,14 +21,17 @@ Jason Johnson
 ## Contact Us
 Jagpreet Randio 
 Email- jagpreet9219@gmail.com
+
 Github - https://github.com/JagpreetRandio
 
 Jason Chen 
 Email- jason.ccfu@gmail.com
+
 Github- https://github.com/Jasonccfu
 
 Jason Johnson
 Email- mobilepc35@gmail.com
+
 Github- https://github.com/palmtopj
 
 ## License
