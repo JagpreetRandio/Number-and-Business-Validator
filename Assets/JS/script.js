@@ -17,7 +17,7 @@ var supportedAreaCodes = [
     }
 ];
 
-
+var globalData={}
 // const options = {
 //     method: 'GET',
 //     headers: {accept: 'application/json', Authorization: '2067826593'}
@@ -161,37 +161,36 @@ const settings = {
 
 $.ajax(settings).done(function (response) {
   console.log(response);
-  console.log(data)
-  showBusinessResult(businesses);
+  showBusinessResult(response.businesses);
 });
 
 var showBusinessResult = function(data) {
-
+    console.log(data)
     const name = document.createElement("p");
     const imageUrl = document.createElement("p");
     const url = document.createElement("p");
     const displayAddress = document.createElement("p");
     const rating = document.createElement("p");
   
-    const node7 = document.createTextNode('Name: ' + data.businesses.name);
-    const node8 = document.createTextNode(data.businesses.image_url);
-    const node9 = document.createTextNode('Url: ' + data.businesses.url);
-    const node10 = document.createTextNode('Address: ' + data.businesses.location.display_address);
-    const node11 = document.createTextNode('Rating: ' + data.businesses.rating);
+    const node7 = document.createTextNode('Name: ' + data[0].name);
+    // const node8 = document.createTextNode(data[0].image_url);
+    const node9 = document.createTextNode('Url: ' + data[0].url);
+    const node10 = document.createTextNode('Address: ' + data[0].location.display_address);
+    const node11 = document.createTextNode('Rating: ' + data[0].rating);
 
     name.appendChild(node7);
-    imageUrl.appendChild(node8);
+    // imageUrl.appendChild(node8);
     url.appendChild(node9);
     displayAddress.appendChild(node10);
     rating.appendChild(node11);
     
-    const resultEl = document.getElementById("result-container");
+    const resultEl2 = document.getElementById("business-container");
 
-    resultEl.appendChild(name);
-    resultEl.appendChild(imageUrl);
-    resultEl.appendChild(url);
-    resultEl.appendChild(displayAddress);
-    resultEl.appendChild(rating);
+    resultEl2.appendChild(name);
+    resultEl2.appendChild(imageUrl);
+    resultEl2.appendChild(url);
+    resultEl2.appendChild(displayAddress);
+    resultEl2.appendChild(rating);
     
     
 }
